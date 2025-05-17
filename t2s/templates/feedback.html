@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Assistance Website</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #c39bd3;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            color: #fff;
+            background-color: #335DFF;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #1a3dbf;
+        }
+
+        /* Chatbox styles */
+        .chatbox-wrapper {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            width: 4rem;
+            height: 4rem;
+            z-index: 1000;
+        }
+
+        .chatbox-toggle {
+            width: 100%;
+            height: 100%;
+            background: #335DFF;
+            color: #fff;
+            font-size: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .chatbox-toggle:active {
+            transform: scale(.9);
+        }
+
+        .chatbox-message-wrapper {
+            position: absolute;
+            bottom: calc(100% + 1rem);
+            right: 0;
+            width: 420px;
+            border-radius: .5rem;
+            overflow: hidden;
+            box-shadow: .5rem .5rem 2rem rgba(0, 0, 0, .1);
+            transform: scale(0);
+            transform-origin: bottom right;
+            transition: .2s;
+        }
+
+        .chatbox-message-wrapper.show {
+            transform: scale(1);
+        }
+
+        .chatbox-message-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fff;
+            padding: .75rem 1.5rem;
+        }
+
+        .chatbox-message-content {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            grid-row-gap: 1rem;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .chatbox-message-item {
+            width: 90%;
+            padding: 1rem;
+        }
+
+        .chatbox-message-item.sent {
+            align-self: flex-end;
+            background: #335DFF;
+            color: #fff;
+            border-radius: .75rem 0 .75rem .75rem;
+        }
+
+        .chatbox-message-item.received {
+            background: #fff;
+            border-radius: 0 .75rem .75rem .75rem;
+            box-shadow: .25rem .25rem 1.5rem rgba(0, 0, 0, .05);
+        }
+
+        .chatbox-message-bottom {
+            background: #fff;
+            padding: .75rem 1.5rem;
+        }
+
+        .chatbox-message-form {
+            display: flex;
+            align-items: center;
+            background: #f5f5f5;
+            border-radius: .5rem;
+            padding: .5rem 1.25rem;
+        }
+
+        .chatbox-message-input {
+            background: transparent;
+            outline: none;
+            border: none;
+            resize: none;
+            scrollbar-width: none;
+            flex: 1;
+        }
+
+        .chatbox-message-submit {
+            font-size: 1.25rem;
+            color: #335DFF;
+            background: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to our Text2Visuals Website</h1>
+        <h1>Please provide your Feedback Form</h1>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfe7Vc33dKFQVpcftvHbBmwUj06zw63a_wePIshvBzsfLVYJg/viewform" target="_blank">Give Us Your Feedback</a>
+    </div>
+
+    <div class="chatbox-wrapper">
+        <div class="chatbox-toggle" onclick="toggleChat()">💬</div>
+        <div class="chatbox-message-wrapper" id="chatboxMessageWrapper">
+            <div class="chatbox-message-header">
+                <h2>Chat</h2>
+                <div onclick="toggleChat()" style="cursor: pointer;">✖</div>
+            </div>
+            <div class="chatbox-message-content" id="chatboxMessageContent"></div>
+            <div class="chatbox-message-bottom">
+                <div class="chatbox-message-form">
+                    <input type="text" class="chatbox-message-input" id="chatboxMessageInput" placeholder="Type a message...">
+                    <button class="chatbox-message-submit" onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleChat() {
+            const chatboxWrapper = document.getElementById('chatboxMessageWrapper');
+            chatboxWrapper.classList.toggle('show');
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatboxMessageInput');
+            const messageContent = document.getElementById('chatboxMessageContent');
+
+            if (input.value.trim()) {
+                const messageItem = document.createElement('div');
+                messageItem.classList.add('chatbox-message-item', 'sent');
+                messageItem.innerText = input.value;
+                messageContent.appendChild(messageItem);
+                input.value = '';
+            }
+        }
+    </script>
+</body>
+</html>

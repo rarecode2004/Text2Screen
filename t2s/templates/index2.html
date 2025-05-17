@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/static/style2.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h2>SIGN UP</h2>
+            <!-- Success message container -->
+            <div id="success-message" style="display: none; color: green; margin-bottom: 15px;">
+                Registered successfully!
+            </div>
+            <form id="signup-form" action="#" method="POST">
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn">Create Account</button>
+            </form>
+            <p>Already have an account? <a href="index3.html">Log in</a></p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript function to handle form submission
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting the traditional way
+
+            // Display the success message
+            document.getElementById('success-message').style.display = 'block';
+
+            // Optionally, you can reset the form fields
+            this.reset();
+        });
+    </script>
+</body>
+</html>

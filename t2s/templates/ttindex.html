@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-to-Video Generator</title>
+    <link rel="stylesheet" href="/static/ttstyle.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Text-to-Video Generator</h1>
+        <form id="promptForm">
+            <label for="prompt">Enter your video description:</label>
+            <input type="text" id="prompt" name="prompt" placeholder="Describe your video..." required>
+            <button type="submit">Generate Video</button>
+        </form>
+
+        <div id="loading" style="display: none;">
+            <p>Generating video, please wait...</p>
+        </div>
+
+        <div id="videoContainer" style="display: none;">
+            <h2>Your Video</h2>
+            <video id="generatedVideo" controls></video>
+            <a id="downloadLink" href="#">Download Video</a>
+        </div>
+    </div>
+
+    <script src="/static/ttscript.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="/static/style3.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="form-container">
+            <h2>LOGIN</h2>
+            <!-- Message container for success or error messages -->
+            <div id="login-message" style="display: none; color: red; margin-bottom: 15px;">
+                <!-- This will dynamically display success or error messages -->
+            </div>
+            <form id="login-form">
+                <input type="email" id="login-email" placeholder="Email Address" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                
+                <label>
+                    <input type="checkbox" name="remember"> Remember
+                </label>
+                
+                <button type="submit">Log in</button>
+            </form>
+            <p>Don't have an account? <a href="index2.html">Sign Up</a></p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript function to handle form submission
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+            
+            // Simulated login check (replace this with your backend login logic)
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            const loginMessage = document.getElementById('login-message');
+            
+            // Simple example logic (replace with real authentication)
+            if (email === "user@example.com" && password === "password123") {
+                loginMessage.style.color = "green";
+                loginMessage.textContent = "Login successful!";
+            } else {
+                loginMessage.style.color = "red";
+                loginMessage.textContent = "Invalid email or password.";
+            }
+            
+            // Display the message
+            loginMessage.style.display = 'block';
+        });
+    </script>
+</body>
+</html>

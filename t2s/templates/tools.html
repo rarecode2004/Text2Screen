@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools and Libraries Used</title>
+    <center><h2> <b>TECHNOLOGIES USED</b></h2></center>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        .content {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #63dde8;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .content h2 {
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h2>Diffusers (Hugging Face)</h2>
+        <p>
+            This library provides implementations of diffusion models, which are deep learning models designed to generate images from text descriptions. In this context, DiffusionPipeline and StableDiffusionPipeline are used to take text input and create images or video frames from those prompts.
+        </p>
+
+        <h2>Transformers (Hugging Face)</h2>
+        <p>
+            This library supports transformer-based models, which are widely used for tasks like natural language processing and text-to-image generation. In this code, transformers form the backbone of models like Stable Diffusion, enabling them to generate coherent and high-quality images based on text prompts.
+        </p>
+
+        <h2>Accelerate</h2>
+        <p>
+            Accelerate is a library designed to optimize model training and inference, especially when working across multiple GPUs or devices. It ensures that large models, like diffusion models, can run efficiently and manage memory properly during operations like image generation.
+        </p>
+
+        <h2>Torch (PyTorch)</h2>
+        <p>
+            PyTorch is a widely-used deep learning framework. It handles the tensor computations and GPU processing required for model inference. In the code, it’s responsible for loading models, running the inference to generate images, and performing computations on either CPU or GPU.
+        </p>
+
+        <h2>Real-ESRGAN</h2>
+        <p>
+            Real-ESRGAN is a super-resolution model that upscales images, enhancing their resolution and quality. In the code, it is used to improve the quality of the generated images from the diffusion models, making them clearer and sharper for video generation.
+        </p>
+
+        <h2>OpenCV</h2>
+        <p>
+            OpenCV (Open Source Computer Vision Library) is a computer vision library used for tasks like image and video processing. Here, it helps with reading, processing, and writing image or video files.
+        </p>
+
+        <h2>Imageio</h2>
+        <p>
+            Imageio is a Python library used for working with images and videos. It is used in this code to save sequences of generated images as a video in formats like MP4, ensuring smooth playback.
+        </p>
+
+        <h2>IPython Display</h2>
+        <p>
+            This is a utility from IPython/Jupyter that allows multimedia content, like images and videos, to be embedded directly into notebook environments. It’s used to display the generated videos within the notebook interface itself.
+        </p>
+    </div>
+</body>
+</html>
