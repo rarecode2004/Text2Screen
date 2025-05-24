@@ -27,6 +27,18 @@ The Text-to-Video Generation Tool is an AI-powered solution that transforms plai
 A serene animated video showing a girl in bed, surrounded by soft moonlight, twinkling stars, and a calm atmosphere. Gentle background music plays, with smooth transitions and subtle breathing motion.
 
 
+**Screenshots:**
+
+> ![image](https://github.com/user-attachments/assets/32752f8c-adfd-47c9-8e0a-e0c01bb91152)
+
+>![image](https://github.com/user-attachments/assets/37e2e74d-cd5c-4e74-abbe-079e0c7e74db)
+ 
+>![image](https://github.com/user-attachments/assets/48389638-2a71-41db-adb8-a419f02cc4d1)
+
+>![image](https://github.com/user-attachments/assets/7ea8d31e-9ff6-42a6-a9a1-1c5766ba76ba)
+
+
+
 **Future Enhancements:**
 
 Custom user styles/themes
